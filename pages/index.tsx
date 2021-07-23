@@ -42,7 +42,7 @@ export default function Home() {
           <React.Fragment key={post._id}>
             <div className="flex flex-col">
               <Link href={`/post/${post._id}`}>
-                <>
+                <div className="flex flex-col cursor-pointer">
                   <img
                     className="max-h-36 mb-1 object-cover"
                     src={post.img}
@@ -64,7 +64,7 @@ export default function Home() {
                       {post.description}
                     </p>
                   </div>
-                </>
+                </div>
               </Link>
             </div>
             <hr />

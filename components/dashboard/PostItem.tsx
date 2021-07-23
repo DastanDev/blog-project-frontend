@@ -24,6 +24,7 @@ const PostItem: React.FC<PostItem> = ({
   const [user] = useContext(UserContext)
   // deletes product by given id
   const deleteHandler = async (id: string) => {
+    if (!window.confirm("Are you sure?")) return
     try {
       const { data } = await axios({
         method: "DELETE",

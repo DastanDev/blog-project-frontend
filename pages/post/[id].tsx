@@ -50,10 +50,10 @@ const postDetail = () => {
             {post?.author}
           </p>
         </div>
-        <div className="capitalize text-xl text-gray-600 mt-3">
+        <div className="capitalize text-2xl font-semibold text-black my-3 mt-4">
           {post?.description}
         </div>
-        <div className="mark-content mb-5 text-gray-800 leading-6">
+        <div className="mark-content mb-5 text-gray-700 leading-6 md:leading-7">
           <ReactMarkdown children={post?.content} />
         </div>
       </div>

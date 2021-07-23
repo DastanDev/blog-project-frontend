@@ -6,7 +6,34 @@
   font-family: "Roboto", sans-serif;
 }
 
-p code {
+.mark-content ul {
+  padding-left: 2rem;
+  list-style: disc;
+  margin: 0.2rem 0;
+}
+
+.mark-content h1 {
+  font-weight: bold;
+  font-size: xx-large;
+  margin: 1rem 0;
+  color: black;
+}
+
+.mark-content h2 {
+  font-weight: bold;
+  font-size: x-large;
+  margin: 1rem 0;
+  color: black;
+}
+
+.mark-content h3 {
+  font-weight: bold;
+  font-size: x-large;
+  margin: 1rem 0;
+  color: black;
+}
+
+.mark-content p code {
   padding: 0.2rem 0.5rem;
   background-color: #2d333b;
   border-radius: 0.2rem;
@@ -14,7 +41,7 @@ p code {
   font-size: 0.8rem !important;
 }
 
-pre {
+.mark-content pre {
   padding: 0.2rem 0.5rem;
   background-color: #2d333b;
   border-radius: 0.2rem;
@@ -22,15 +49,15 @@ pre {
   font-size: 0.8rem !important;
 }
 
-a {
+.mark-content a {
   color: #3778e2 !important;
 }
 
-a:hover {
+.mark-content a:hover {
   text-decoration: underline;
 }
 
-p img {
+.mark-content p img {
   height: auto;
   max-height: 200px;
   object-fit: cover;
@@ -38,7 +65,7 @@ p img {
 }
 
 .mark-content p {
-  margin: 1.2rem 0;
+  margin: 1.1rem 0;
 }
 
 /* loader */
@@ -77,5 +104,13 @@ p img {
   100% {
     top: 24px;
     height: 32px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .mark-content ul {
+    padding-left: 4rem;
+    list-style: disc;
+    margin: 0.2rem 0;
   }
 }

@@ -49,7 +49,7 @@ export default function Home() {
                   {post.title}
                 </h2>
               </Link>
-              <p className="text-gray-500 font-semibold"></p>
+              <p className="text-gray-500 font-semibold">{post.author}</p>
               <div className="flex place-items-center space-x-2">
                 <img
                   className="h-10 w-10 mt-3"

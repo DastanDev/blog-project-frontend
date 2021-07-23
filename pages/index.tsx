@@ -41,29 +41,29 @@ export default function Home() {
         {posts?.map((post, idx) => (
           <React.Fragment key={post._id}>
             <div className="flex flex-col">
-              <img
-                className="max-h-36 mb-1 object-cover"
-                src={post.img}
-                alt={post.title}
-              />
-              <p className="text-gray-500 text-sm">
-                {dayjs(post.createdAt).fromNow(true)} ago
-              </p>
               <Link href={`/post/${post._id}`}>
+                <img
+                  className="max-h-36 mb-1 object-cover"
+                  src={post.img}
+                  alt={post.title}
+                />
+                <p className="text-gray-500 text-sm">
+                  {dayjs(post.createdAt).fromNow(true)} ago
+                </p>
                 <h2 className="cursor-pointer capitalize font-bold text-2xl my-1 hover:text-blue-400 hover:no-underline">
                   {post.title}
                 </h2>
+                <div className="flex place-items-center space-x-2">
+                  <img
+                    className="h-10 w-10 mt-3"
+                    src="https://budgetpainters.ca/wp-content/uploads/2018/10/user.png"
+                    alt=""
+                  />
+                  <p className="text-gray-800 font-bold text-lg">
+                    {post.description}
+                  </p>
+                </div>
               </Link>
-              <div className="flex place-items-center space-x-2">
-                <img
-                  className="h-10 w-10 mt-3"
-                  src="https://budgetpainters.ca/wp-content/uploads/2018/10/user.png"
-                  alt=""
-                />
-                <p className="text-gray-800 font-bold text-lg">
-                  {post.description}
-                </p>
-              </div>
             </div>
             <hr />
           </React.Fragment>

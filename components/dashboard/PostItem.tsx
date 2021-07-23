@@ -14,7 +14,6 @@ interface PostItem extends Post {
 }
 
 const PostItem: React.FC<PostItem> = ({
-  author,
   createdAt,
   title,
   content,

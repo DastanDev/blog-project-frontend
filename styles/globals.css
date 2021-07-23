@@ -108,6 +108,7 @@
 }
 
 @media only screen and (min-width: 600px) {
+ 
   .mark-content ul {
     padding-left: 4rem;
     list-style: disc;

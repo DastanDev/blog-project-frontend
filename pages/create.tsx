@@ -11,6 +11,7 @@ const create = () => {
     title: "",
     content: "",
     description: "",
+    img: "",
   })
   const [user, setUser] = useContext(UserContext)
   const [newPost, setNewPost] = useState({ title: "", content: "", _id: "" })
@@ -56,6 +57,15 @@ const create = () => {
             value={inputs.title}
             className="bg-gray-200 p-2 rounded-md w-full outline-none"
             placeholder="Title"
+            type="text"
+          />
+          <input
+            onChange={(e) =>
+              setInputs((prev) => ({ ...prev, img: e.target.value }))
+            }
+            value={inputs.img}
+            className="bg-gray-200 p-2 rounded-md w-full outline-none"
+            placeholder="Image Url"
             type="text"
           />
           <textarea

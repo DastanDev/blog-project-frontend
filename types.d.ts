@@ -12,4 +12,5 @@ export interface Post {
   createdAt: string
   updatedAt: string
   author: string
+  img: string
 }

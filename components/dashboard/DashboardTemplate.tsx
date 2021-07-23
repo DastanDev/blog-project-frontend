@@ -27,7 +27,7 @@ const DashboardTemplate = ({ children }) => {
       <div className="flex w-full min-h-screen">
         {/* <!-- left side --> */}
         <div className="flex flex-col bg-gray-900 text-white w-3/12 overflow-hidden">
-          <h2 className="font-bold mb-20 text-2xl p-5">Dashboard</h2>
+          <h2 className="font-bold text-2xl p-5">Dashboard</h2>
           <ul className="flex font-semibold capitalize text-lg flex-col">
             <li className={`${checkActiveButton("posts")}`}>
               <Link href="/dashboard/posts">
@@ -50,13 +50,6 @@ const DashboardTemplate = ({ children }) => {
         {/* <!-- right side --> */}
         {/* <!-- nav --> */}
         <div className="flex w-full flex-col">
-          <div className="flex p-5 w-full justify-between">
-            <h2>Search</h2>
-            <div className="flex space-x-4">
-              <p>ring</p>
-              <p>avatar</p>
-            </div>
-          </div>
           <div className="border-t-2 border-red-300 w-full"></div>
           {/* body of the page */}
           {children}

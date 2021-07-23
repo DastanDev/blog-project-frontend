@@ -28,33 +28,6 @@ const postDetail = () => {
     if (router.query.id) getPostDetails()
   }, [router])
 
-  // set styles for markdown
-  useEffect(() => {
-    const h1s = document.querySelectorAll("h1")
-    const h2s = document.querySelectorAll("h2")
-    const lists = document.querySelectorAll("ul")
-    const listItems = document.querySelectorAll("li")
-
-    h1s.forEach((h1) => {
-      h1.classList.add("font-bold")
-      h1.classList.add("text-2xl")
-      h1.classList.add("text-black")
-      h1.classList.add("my-4")
-    })
-    h2s.forEach((h2) => {
-      h2.classList.add("font-bold")
-      h2.classList.add("text-lg")
-      h2.classList.add("text-black")
-      h2.classList.add("my-4")
-    })
-    lists.forEach((list) => {
-      list.classList.add("list-disc")
-    })
-    listItems.forEach((item) => {
-      item.classList.add("list-item")
-    })
-  }, [post])
-
   return (
     <>
       <Head>
@@ -80,10 +53,7 @@ const postDetail = () => {
         <div className="capitalize text-xl text-gray-600 mt-3">
           {post?.description}
         </div>
-        <div
-          id="postContent"
-          className="mb-5 text-gray-700 leading-7 md:leading-8"
-        >
+        <div className="mark-content mb-5 text-gray-800 leading-6">
           <ReactMarkdown children={post?.content} />
         </div>
       </div>

@@ -13,8 +13,12 @@ export default function Home() {
   // get all posts
   useEffect(() => {
     const getAllPosts = async () => {
-      const { data } = await axios.get(`${baseUrl}/post`)
-      setPosts(data)
+      try {
+        const { data } = await axios.get(`${baseUrl}/post`)
+        setPosts(data)
+      } catch (error) {
+        console.log(error.message)
+      }
     }
     getAllPosts()
   }, [])

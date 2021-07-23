@@ -1,0 +1,56 @@
+import React, { useEffect, useState } from "react"
+import axios from "axios"
+import baseUrl from "../baseUrl"
+import Link from "next/link"
+import dayjs from "dayjs"
+import { Post } from "../types"
+import relativeTime from "dayjs/plugin/relativeTime"
+import Head from "next/head"
+dayjs.extend(relativeTime)
+
+export default function Home() {
+  const [posts, setPosts] = useState<Post[]>([])
+  // get all posts
+  useEffect(() => {
+    const getAllPosts = async () => {
+      const { data } = await axios.get(`${baseUrl}/post`)
+      setPosts(data)
+    }
+    getAllPosts()
+  }, [])
+  return (
+    <>
+      <Head>
+        <title>Home</title>
+      </Head>
+      <div className="flex flex-col space-y-5 max-w-xl w-full p-5 mx-auto">
+        {posts?.map((post, idx) => (
+          <React.Fragment key={post._id}>
+            <div className="flex flex-col">
+              <p className="text-gray-500 text-sm">
+                {dayjs(post.createdAt).fromNow(true)} ago
+              </p>
+              <Link href={`/post/${post._id}`}>
+                <h2 className="cursor-pointer capitalize font-bold text-2xl my-1 hover:text-blue-400 hover:no-underline">
+                  {post.title}
+                </h2>
+              </Link>
+              <p className="text-gray-500 font-semibold"></p>
+              <div className="flex place-items-center space-x-2">
+                <img
+                  className="h-10 w-10 mt-3"
+                  src="https://budgetpainters.ca/wp-content/uploads/2018/10/user.png"
+                  alt=""
+                />
+                <p className="text-gray-800 font-bold text-lg">
+                  {post.description}
+                </p>
+              </div>
+            </div>
+            <hr />
+          </React.Fragment>
+        ))}
+      </div>
+    </>
+  )
+}

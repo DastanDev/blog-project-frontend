@@ -41,6 +41,11 @@ export default function Home() {
         {posts?.map((post, idx) => (
           <React.Fragment key={post._id}>
             <div className="flex flex-col">
+              <img
+                className="max-h-36 mb-1 object-cover"
+                src={post.img}
+                alt={post.title}
+              />
               <p className="text-gray-500 text-sm">
                 {dayjs(post.createdAt).fromNow(true)} ago
               </p>
